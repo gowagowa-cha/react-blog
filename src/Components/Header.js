@@ -10,7 +10,6 @@ import MenuIcon from "@mui/icons-material/Menu";
 import SearchIcon from "@mui/icons-material/Search";
 import Button from "@mui/material/Button";
 
-
 const Search = styled("div")(({ theme }) => ({
 	position: "relative",
 	marginRight: "20px",
@@ -54,7 +53,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 	},
 }));
 
-export default function Header() {
+export default function Header({addPost}) {
 	return (
 		<Box sx={{ flexGrow: 1 }}>
 			<AppBar position='static'>
@@ -80,10 +79,11 @@ export default function Header() {
 						</SearchIconWrapper>
 						<StyledInputBase placeholder='Search…' inputProps={{ "aria-label": "search" }} />
 					</Search>
-					<Button color="success" variant='contained'>Добавить Пост</Button>
+					<Button onClick={addPost} color='success' variant='contained'>
+						Добавить Пост
+					</Button>
 				</Toolbar>
 			</AppBar>
 		</Box>
-
 	);
 }

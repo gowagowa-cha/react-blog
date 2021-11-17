@@ -57,7 +57,7 @@ function App() {
 				title: "Третья статья",
 				imageUrl:
 					"https://images.unsplash.com/photo-1636145411033-41bb1b898d5c?ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw2Nnx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=60",
-				text: "йцу 1231231 уйц йц123123!!!",
+				text: "Vestibulum tincidunt lacus nec nibh eleifend, vitae tincidunt eros pretium. Maecenas imperdiet scelerisque auctor. Sed ac mollis felis, quis rutrum dolor. Nunc rutrum sapien pharetra risus sodales auctor non a est. Donec elementum turpis in metus fringilla, nec vulputate libero maximus. Aenean non posuere urna. Fusce nec sollicitudin erat. Donec ac bibendum neque, id feugiat urna.",
 			},
 		});
 	};

@@ -1,61 +1,15 @@
 import React from "react";
-import { createStore } from "redux";
 import Header from "./Components/Header";
 import Post from "./Components/Post";
 import Comments from "./Components/Comments";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
+import { store } from "./redux/store";
 
 import "./index.scss";
 
-const initialState = {
-	posts: [
-		{
-			id: 1,
-			title: "Тестовая статья",
-			imageUrl:
-				"https://images.unsplash.com/photo-1636315393004-06053754029e?ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDE1fGJvOGpRS1RhRTBZfHxlbnwwfHx8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
-			text: "Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica",
-		},
-		{
-			id: 2,
-			title: "Это вторая статья",
-			imageUrl:
-				"https://images.unsplash.com/photo-1636145401752-41d36a398a6b?ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDEyfGJvOGpRS1RhRTBZfHxlbnwwfHx8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
-			text: "йцуйцулд фыв аофыолдво лдфыолдвфолдывл",
-		},
-	],
-	comments: [],
-	searchValue: "",
-};
-
-function appReducer(state = initialState, action) {
-	if (action.type === "ADD_POST") {
-		return {
-			...state,
-			posts: [...state.posts, action.payload],
-		};
-	}
-	if (action.type === "REMOVE_POST") {
-		return {
-			...state,
-			posts: state.posts.filter((obj) => obj.id !== action.payload.id),
-		};
-	}
-	return state;
-}
-
-const store = createStore(appReducer);
-
 function App() {
-	const [posts, setPosts] = React.useState(initialState.posts);
-
-	React.useEffect(() => {
-		store.subscribe(() => {
-			const { posts } = store.getState();
-			setPosts(posts);
-		});
-	}, []);
+	const posts = store.getState().posts;
 
 	const addPost = () => {
 		store.dispatch({
@@ -88,7 +42,7 @@ function App() {
 				<Grid padding='20px' container spacing={2}>
 					<Grid item xs={8}>
 						{posts.map((str, index) => (
-							<Post {...str} removePost={removePost} key={index}/>
+							<Post {...str} removePost={removePost} key={index} />
 						))}
 					</Grid>
 					<Grid item xs={4}>

@@ -9,7 +9,7 @@ import { store } from "./redux/store";
 import "./index.scss";
 
 function App() {
-	const posts = store.getState().posts;
+	const posts = []
 
 	const addPost = () => {
 		store.dispatch({

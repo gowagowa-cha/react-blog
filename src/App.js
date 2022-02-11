@@ -40,7 +40,7 @@ function App() {
 			<Header addPost={addPost} />
 			<Box sx={{ flexGrow: 1 }}>
 				<Grid padding='20px' container spacing={2}>
-					<Posts posts={posts} removePost={removePost} />
+					<Posts removePost={removePost} />
 					<Grid item xs={4}>
 						<Comments />
 					</Grid>
@@ -51,3 +51,5 @@ function App() {
 }
 
 export default App;
+
+window.store = store

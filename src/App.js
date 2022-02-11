@@ -1,12 +1,12 @@
 import React from "react";
 import Header from "./Components/Header";
-import Post from "./Components/Post";
 import Comments from "./Components/Comments";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import { store } from "./redux/store";
 
 import "./index.scss";
+import { Posts } from './Components/Posts';
 
 function App() {
 	const posts = []
@@ -40,11 +40,7 @@ function App() {
 			<Header addPost={addPost} />
 			<Box sx={{ flexGrow: 1 }}>
 				<Grid padding='20px' container spacing={2}>
-					<Grid item xs={8}>
-						{posts.map((str, index) => (
-							<Post {...str} removePost={removePost} key={index} />
-						))}
-					</Grid>
+					<Posts posts={posts} removePost={removePost} />
 					<Grid item xs={4}>
 						<Comments />
 					</Grid>

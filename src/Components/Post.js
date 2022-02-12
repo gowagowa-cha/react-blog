@@ -5,6 +5,7 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
+import { Link } from "react-router-dom";
 
 export default function Post({ id, imageUrl, title, text, removePost }) {
   return (
@@ -24,7 +25,9 @@ export default function Post({ id, imageUrl, title, text, removePost }) {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="large">Просмотр</Button>
+        <Link to={`/post/${id}`}>
+          <Button size="large">Просмотр</Button>
+        </Link>
         <Button onClick={() => removePost(id)} color="warning" size="small">
           Удалить
         </Button>

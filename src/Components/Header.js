@@ -10,6 +10,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import SearchIcon from "@mui/icons-material/Search";
 import Button from "@mui/material/Button";
 import { Container } from "@mui/material";
+import { Link } from "react-router-dom";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -69,14 +70,17 @@ export default function Header({ addPost }) {
             >
               <MenuIcon />
             </IconButton>
+
+						
             <Typography
               variant="h6"
               noWrap
               component="div"
               sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
             >
-              React Blog
+              <Link to="/"><span style={{color: "white", textDecoration: "underline" }}>React Blog</span></Link>
             </Typography>
+						
             <Search>
               <SearchIconWrapper>
                 <SearchIcon />

@@ -6,7 +6,7 @@ import { Button, Divider, Paper, TextField } from "@mui/material";
 
 export const FullPosts = () => {
   const { id } = useParams();
-  const post = useSelector(({ posts }) => posts.find(obj => obj.id === Number(id)));
+  const post = useSelector(({ posts }) => posts.find(obj => Number(obj.id) === Number(id)));
 
 	console.log(id);
 
@@ -15,7 +15,7 @@ export const FullPosts = () => {
       <h1>{post.title}</h1>
       <img
         style={{ width: "100%", height: 300 }}
-        src={post.imageUrl}
+        src={post.image	}
         alt="images"
       />
       <p>{post.text}</p>

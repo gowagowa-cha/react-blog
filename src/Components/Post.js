@@ -7,13 +7,13 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import { Link } from "react-router-dom";
 
-export default function Post({ id, imageUrl, title, text, removePost }) {
+export default function Post({ id, image, title, text, removePost }) {
   return (
-    <Card sx={{ maxWidth: "100%" }}>
+    <Card sx={{ maxWidth: "100%", marginBottom: "30px" }}>
       <CardMedia
         component="img"
         height="200"
-        image={imageUrl}
+        image={image}
         alt="green iguana"
       />
       <CardContent>

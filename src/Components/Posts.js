@@ -4,7 +4,7 @@ import Grid from "@mui/material/Grid";
 import { useSelector } from "react-redux";
 
 export function Posts({ removePost }) {
-  const posts = useSelector((state) => state.posts);
+  const posts = useSelector((state) => state.posts.items);
   return (
     <Grid item xs={8}>
       {posts.map((str, index) => (

@@ -6,7 +6,7 @@ import { Button, Divider, Paper, TextField } from "@mui/material";
 
 export const FullPosts = () => {
   const { id } = useParams();
-  const post = useSelector(({ posts }) => posts.find(obj => Number(obj.id) === Number(id)));
+  const post = useSelector(({ posts }) => posts.items.find(obj => Number(obj.id) === Number(id)));
 
 	console.log(id);
 

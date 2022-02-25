@@ -7,6 +7,8 @@ import { Container } from "@mui/material";
 import { Route, Routes } from "react-router";
 import { Home } from "./Components/pages/Home";
 import { FullPosts } from "./Components/pages/FullPosts";
+import { setPosts } from "./redux/actions/posts";
+import { setComments } from './redux/actions/comments';
 
 function App() {
   const dispatch = useDispatch();
@@ -14,10 +16,15 @@ function App() {
     axios
       .get("https://5c3755177820ff0014d92711.mockapi.io/posts?page=1&limit=10")
       .then(({ data }) => {
-					dispatch({
-						type: 'SET_POSTS',
-						payload: data
-					})
+        dispatch(setPosts(data));
+      });
+  }, []);
+
+  React.useEffect(() => {
+    axios
+      .get("https://619d626a131c600017088ee6.mockapi.io/comments")
+      .then(({ data }) => {
+        dispatch(setComments(data))
       });
   }, []);
 

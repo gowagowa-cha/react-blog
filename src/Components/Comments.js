@@ -6,8 +6,13 @@ import Divider from "@mui/material/Divider";
 import ListItemText from "@mui/material/ListItemText";
 import ListItemAvatar from "@mui/material/ListItemAvatar";
 import Avatar from "@mui/material/Avatar";
+import { useSelector } from 'react-redux';
 
 function Comments() {
+	const comment = useSelector((state) => state.comments.items)
+	{comment.map((el) => (
+		console.log(el.name)
+	))}
   return (
     <div>
       <List sx={{ width: "100%", maxWidth: 360, bgcolor: "background.paper" }}>

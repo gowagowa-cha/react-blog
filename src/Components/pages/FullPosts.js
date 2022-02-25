@@ -20,7 +20,7 @@ export const FullPosts = () => {
       />
       <p>{post.text}</p>
       <Divider />
-      <h3>Коментарии (0)</h3>
+      <h3>Коментарии ({post.length})</h3>
       <Comments />
       <Divider />
       <h3>Добавить коментарий</h3>
